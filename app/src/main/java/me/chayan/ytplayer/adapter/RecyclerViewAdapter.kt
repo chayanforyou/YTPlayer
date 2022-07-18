@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import me.chayan.ytplayer.R
-import me.chayan.ytplayer.Utils.getVideoId
 import me.chayan.ytplayer.databinding.RowVideoBinding
 import me.chayan.ytplayer.models.Video
 import me.chayan.ytplayer.youTubePlayer.YouTubePlayerActivity
@@ -39,7 +38,7 @@ class RecyclerViewAdapter(
             binding.executePendingBindings()
 
             itemView.setOnClickListener {
-                YouTubePlayerActivity.playVideo(itemView.context, video.url.getVideoId())
+                YouTubePlayerActivity.playVideo(itemView.context, video.getVideoId())
             }
         }
     }
