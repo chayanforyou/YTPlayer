@@ -9,9 +9,9 @@ import me.chayan.ytplayer.databinding.RowVideoBinding
 import me.chayan.ytplayer.models.Video
 import me.chayan.ytplayer.youTubePlayer.YouTubePlayerActivity
 
-class RecyclerViewAdapter(
+class VideoListAdapter(
     private val videos: List<Video>,
-) : RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {
+) : RecyclerView.Adapter<VideoListAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding = DataBindingUtil.inflate<RowVideoBinding>(
@@ -38,7 +38,7 @@ class RecyclerViewAdapter(
             binding.executePendingBindings()
 
             itemView.setOnClickListener {
-                YouTubePlayerActivity.playVideo(itemView.context, video.getVideoId())
+                YouTubePlayerActivity.playVideo(itemView.context, video.url)
             }
         }
     }

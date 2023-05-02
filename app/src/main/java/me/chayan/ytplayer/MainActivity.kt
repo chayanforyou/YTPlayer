@@ -2,21 +2,21 @@ package me.chayan.ytplayer
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import me.chayan.ytplayer.adapter.RecyclerViewAdapter
+import me.chayan.ytplayer.adapter.VideoListAdapter
 import me.chayan.ytplayer.databinding.ActivityMainBinding
 import me.chayan.ytplayer.models.Video
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var adapter: RecyclerViewAdapter
+    private lateinit var adapter: VideoListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        adapter = RecyclerViewAdapter(getVideoList())
+        adapter = VideoListAdapter(getVideoList())
         binding.recyclerView.adapter = adapter
     }
 
